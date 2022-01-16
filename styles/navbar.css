@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+#nav{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;;
+    border-bottom: 1px solid ;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    background-color: rgb(255, 255, 255);   
+}
+#nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+#nav ul li { 
+    list-style: none;
+}
+#searchBox{
+    margin-left: 30%;
+}
+#search{
+    height: 41px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: larger;
+    padding: 0px 20px;
+}
+.navText{
+    font-size: larger;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
+#sugestionDiv{
+    margin-top: 1px;
+    position: fixed;
+    max-height: 290px;
+    width: 300px;
+    overflow-y: scroll;
+    background-color: white;
+    padding: 0px 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    border-radius: 5px;
+    
+}
+#sugestionDiv::-webkit-scrollbar{
+    display: none;
+}
+
+#sugestionDiv div{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+    margin-top: 10px;
+}
+#sugestionDiv div img{
+    width: 70px;
+    height: 100%;
+}
+#sugestionDiv div p{
+    font-weight: 700;
+    margin: 15px 0px;
+    
+}

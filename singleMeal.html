@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./styles/singleItem.css" />
+</head>
+<body>
+    <div id="container"></div>
+    <div id="blank"></div>
+    <div id="singleMeal"></div>
+    
+</body>
+</html>
+<script type="module">
+    var globalVariable;
+    import navbar from "./components/navbar.js";
+    import {fetching,appendItems,appendSingle,debounce,sugestions} from "./scripts/showItems.js";
+
+
+    let container = document.getElementById("container")
+    let singleMeal = document.getElementById("singleMeal")
+    container.innerHTML=navbar();
+
+    let url=location.search.substring(1)
+    let appendData= fetching(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${url}`)
+    appendSingle(appendData,singleMeal)
+    
+    let search =document.getElementById("search")
+    let sugestionDiv =document.getElementById("sugestionDiv")
+    sugestionDiv.innerHTML=""
+    search.oninput=()=>{
+      sugestionDiv.innerHTML=""
+      debounce(sugestions,1000,globalVariable,search,sugestionDiv)
+   
+    }
+    
+    
+</script>
